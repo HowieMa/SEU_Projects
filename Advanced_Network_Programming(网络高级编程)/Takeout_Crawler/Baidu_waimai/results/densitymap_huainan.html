@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{height:500px;width:100%;}
+		#r-result{width:100%;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=XeFrQYFhgsqs3WzdHCV0WvS4NyZmWlRZ"></script>
+	<title>添加/删除覆盖物</title>
+</head>
+<body>
+	<div id="allmap"></div>
+	<div id="r-result">
+		<input type="button" onclick="add_overlay();" value="添加覆盖物" />
+		<input type="button" onclick="remove_overlay();" value="删除覆盖物" />
+        红色 TOP 0-25%  橙色 TOP 25-50%  黄色 TOP 50-75%  白色 TOP 75-100% 
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.89514,32.647626);
+	map.centerAndZoom(point, 11);
+	map.enableScrollWheelZoom(); 
+
+
+      var pStart = new BMap.Point(116.804016,32.573204);
+    	var pEnd = new BMap.Point(116.822034018,32.5883878608);
+    	var rectangle0 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.5883878608);
+    	var pEnd = new BMap.Point(116.822034018,32.6035717217);
+    	var rectangle1 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6035717217);
+    	var pEnd = new BMap.Point(116.822034018,32.6187555825);
+    	var rectangle2 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6187555825);
+    	var pEnd = new BMap.Point(116.822034018,32.6339394433);
+    	var rectangle3 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6339394433);
+    	var pEnd = new BMap.Point(116.822034018,32.6491233042);
+    	var rectangle4 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6491233042);
+    	var pEnd = new BMap.Point(116.822034018,32.664307165);
+    	var rectangle5 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.664307165);
+    	var pEnd = new BMap.Point(116.822034018,32.6794910258);
+    	var rectangle6 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6794910258);
+    	var pEnd = new BMap.Point(116.822034018,32.6946748867);
+    	var rectangle7 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.804016,32.6946748867);
+    	var pEnd = new BMap.Point(116.822034018,32.7098587475);
+    	var rectangle8 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.573204);
+    	var pEnd = new BMap.Point(116.840052036,32.5883878608);
+    	var rectangle9 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.5883878608);
+    	var pEnd = new BMap.Point(116.840052036,32.6035717217);
+    	var rectangle10 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6035717217);
+    	var pEnd = new BMap.Point(116.840052036,32.6187555825);
+    	var rectangle11 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6187555825);
+    	var pEnd = new BMap.Point(116.840052036,32.6339394433);
+    	var rectangle12 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6339394433);
+    	var pEnd = new BMap.Point(116.840052036,32.6491233042);
+    	var rectangle13 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6491233042);
+    	var pEnd = new BMap.Point(116.840052036,32.664307165);
+    	var rectangle14 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.664307165);
+    	var pEnd = new BMap.Point(116.840052036,32.6794910258);
+    	var rectangle15 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6794910258);
+    	var pEnd = new BMap.Point(116.840052036,32.6946748867);
+    	var rectangle16 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.822034018,32.6946748867);
+    	var pEnd = new BMap.Point(116.840052036,32.7098587475);
+    	var rectangle17 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.573204);
+    	var pEnd = new BMap.Point(116.858070054,32.5883878608);
+    	var rectangle18 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.5883878608);
+    	var pEnd = new BMap.Point(116.858070054,32.6035717217);
+    	var rectangle19 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6035717217);
+    	var pEnd = new BMap.Point(116.858070054,32.6187555825);
+    	var rectangle20 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6187555825);
+    	var pEnd = new BMap.Point(116.858070054,32.6339394433);
+    	var rectangle21 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6339394433);
+    	var pEnd = new BMap.Point(116.858070054,32.6491233042);
+    	var rectangle22 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6491233042);
+    	var pEnd = new BMap.Point(116.858070054,32.664307165);
+    	var rectangle23 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.664307165);
+    	var pEnd = new BMap.Point(116.858070054,32.6794910258);
+    	var rectangle24 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6794910258);
+    	var pEnd = new BMap.Point(116.858070054,32.6946748867);
+    	var rectangle25 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.840052036,32.6946748867);
+    	var pEnd = new BMap.Point(116.858070054,32.7098587475);
+    	var rectangle26 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.573204);
+    	var pEnd = new BMap.Point(116.876088072,32.5883878608);
+    	var rectangle27 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.5883878608);
+    	var pEnd = new BMap.Point(116.876088072,32.6035717217);
+    	var rectangle28 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" Red"});  
+      var pStart = new BMap.Point(116.858070054,32.6035717217);
+    	var pEnd = new BMap.Point(116.876088072,32.6187555825);
+    	var rectangle29 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.6187555825);
+    	var pEnd = new BMap.Point(116.876088072,32.6339394433);
+    	var rectangle30 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.6339394433);
+    	var pEnd = new BMap.Point(116.876088072,32.6491233042);
+    	var rectangle31 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.6491233042);
+    	var pEnd = new BMap.Point(116.876088072,32.664307165);
+    	var rectangle32 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.664307165);
+    	var pEnd = new BMap.Point(116.876088072,32.6794910258);
+    	var rectangle33 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.6794910258);
+    	var pEnd = new BMap.Point(116.876088072,32.6946748867);
+    	var rectangle34 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.858070054,32.6946748867);
+    	var pEnd = new BMap.Point(116.876088072,32.7098587475);
+    	var rectangle35 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.573204);
+    	var pEnd = new BMap.Point(116.89410609,32.5883878608);
+    	var rectangle36 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.5883878608);
+    	var pEnd = new BMap.Point(116.89410609,32.6035717217);
+    	var rectangle37 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6035717217);
+    	var pEnd = new BMap.Point(116.89410609,32.6187555825);
+    	var rectangle38 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6187555825);
+    	var pEnd = new BMap.Point(116.89410609,32.6339394433);
+    	var rectangle39 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6339394433);
+    	var pEnd = new BMap.Point(116.89410609,32.6491233042);
+    	var rectangle40 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6491233042);
+    	var pEnd = new BMap.Point(116.89410609,32.664307165);
+    	var rectangle41 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.664307165);
+    	var pEnd = new BMap.Point(116.89410609,32.6794910258);
+    	var rectangle42 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6794910258);
+    	var pEnd = new BMap.Point(116.89410609,32.6946748867);
+    	var rectangle43 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.876088072,32.6946748867);
+    	var pEnd = new BMap.Point(116.89410609,32.7098587475);
+    	var rectangle44 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.573204);
+    	var pEnd = new BMap.Point(116.912124108,32.5883878608);
+    	var rectangle45 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.5883878608);
+    	var pEnd = new BMap.Point(116.912124108,32.6035717217);
+    	var rectangle46 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6035717217);
+    	var pEnd = new BMap.Point(116.912124108,32.6187555825);
+    	var rectangle47 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6187555825);
+    	var pEnd = new BMap.Point(116.912124108,32.6339394433);
+    	var rectangle48 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6339394433);
+    	var pEnd = new BMap.Point(116.912124108,32.6491233042);
+    	var rectangle49 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6491233042);
+    	var pEnd = new BMap.Point(116.912124108,32.664307165);
+    	var rectangle50 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.664307165);
+    	var pEnd = new BMap.Point(116.912124108,32.6794910258);
+    	var rectangle51 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6794910258);
+    	var pEnd = new BMap.Point(116.912124108,32.6946748867);
+    	var rectangle52 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.89410609,32.6946748867);
+    	var pEnd = new BMap.Point(116.912124108,32.7098587475);
+    	var rectangle53 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.573204);
+    	var pEnd = new BMap.Point(116.930142126,32.5883878608);
+    	var rectangle54 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.5883878608);
+    	var pEnd = new BMap.Point(116.930142126,32.6035717217);
+    	var rectangle55 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6035717217);
+    	var pEnd = new BMap.Point(116.930142126,32.6187555825);
+    	var rectangle56 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6187555825);
+    	var pEnd = new BMap.Point(116.930142126,32.6339394433);
+    	var rectangle57 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6339394433);
+    	var pEnd = new BMap.Point(116.930142126,32.6491233042);
+    	var rectangle58 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6491233042);
+    	var pEnd = new BMap.Point(116.930142126,32.664307165);
+    	var rectangle59 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.664307165);
+    	var pEnd = new BMap.Point(116.930142126,32.6794910258);
+    	var rectangle60 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6794910258);
+    	var pEnd = new BMap.Point(116.930142126,32.6946748867);
+    	var rectangle61 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.912124108,32.6946748867);
+    	var pEnd = new BMap.Point(116.930142126,32.7098587475);
+    	var rectangle62 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.573204);
+    	var pEnd = new BMap.Point(116.948160144,32.5883878608);
+    	var rectangle63 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.5883878608);
+    	var pEnd = new BMap.Point(116.948160144,32.6035717217);
+    	var rectangle64 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6035717217);
+    	var pEnd = new BMap.Point(116.948160144,32.6187555825);
+    	var rectangle65 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6187555825);
+    	var pEnd = new BMap.Point(116.948160144,32.6339394433);
+    	var rectangle66 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6339394433);
+    	var pEnd = new BMap.Point(116.948160144,32.6491233042);
+    	var rectangle67 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6491233042);
+    	var pEnd = new BMap.Point(116.948160144,32.664307165);
+    	var rectangle68 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.664307165);
+    	var pEnd = new BMap.Point(116.948160144,32.6794910258);
+    	var rectangle69 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6794910258);
+    	var pEnd = new BMap.Point(116.948160144,32.6946748867);
+    	var rectangle70 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.930142126,32.6946748867);
+    	var pEnd = new BMap.Point(116.948160144,32.7098587475);
+    	var rectangle71 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.573204);
+    	var pEnd = new BMap.Point(116.966178162,32.5883878608);
+    	var rectangle72 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.5883878608);
+    	var pEnd = new BMap.Point(116.966178162,32.6035717217);
+    	var rectangle73 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6035717217);
+    	var pEnd = new BMap.Point(116.966178162,32.6187555825);
+    	var rectangle74 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6187555825);
+    	var pEnd = new BMap.Point(116.966178162,32.6339394433);
+    	var rectangle75 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6339394433);
+    	var pEnd = new BMap.Point(116.966178162,32.6491233042);
+    	var rectangle76 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6491233042);
+    	var pEnd = new BMap.Point(116.966178162,32.664307165);
+    	var rectangle77 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.664307165);
+    	var pEnd = new BMap.Point(116.966178162,32.6794910258);
+    	var rectangle78 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6794910258);
+    	var pEnd = new BMap.Point(116.966178162,32.6946748867);
+    	var rectangle79 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.948160144,32.6946748867);
+    	var pEnd = new BMap.Point(116.966178162,32.7098587475);
+    	var rectangle80 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.573204);
+    	var pEnd = new BMap.Point(116.98419618,32.5883878608);
+    	var rectangle81 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.5883878608);
+    	var pEnd = new BMap.Point(116.98419618,32.6035717217);
+    	var rectangle82 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6035717217);
+    	var pEnd = new BMap.Point(116.98419618,32.6187555825);
+    	var rectangle83 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6187555825);
+    	var pEnd = new BMap.Point(116.98419618,32.6339394433);
+    	var rectangle84 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6339394433);
+    	var pEnd = new BMap.Point(116.98419618,32.6491233042);
+    	var rectangle85 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6491233042);
+    	var pEnd = new BMap.Point(116.98419618,32.664307165);
+    	var rectangle86 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.664307165);
+    	var pEnd = new BMap.Point(116.98419618,32.6794910258);
+    	var rectangle87 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6794910258);
+    	var pEnd = new BMap.Point(116.98419618,32.6946748867);
+    	var rectangle88 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+      var pStart = new BMap.Point(116.966178162,32.6946748867);
+    	var pEnd = new BMap.Point(116.98419618,32.7098587475);
+    	var rectangle89 = new BMap.Polygon([
+    		new BMap.Point(pStart.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pStart.lat),
+    		new BMap.Point(pEnd.lng,pEnd.lat),
+    		new BMap.Point(pStart.lng,pEnd.lat)
+    	], {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5, fillColor:" white"});  
+	
+	//添加覆盖物
+	function add_overlay(){
+        map.addOverlay(rectangle0); 
+       map.addOverlay(rectangle1); 
+       map.addOverlay(rectangle2); 
+       map.addOverlay(rectangle3); 
+       map.addOverlay(rectangle4); 
+       map.addOverlay(rectangle5); 
+       map.addOverlay(rectangle6); 
+       map.addOverlay(rectangle7); 
+       map.addOverlay(rectangle8); 
+       map.addOverlay(rectangle9); 
+       map.addOverlay(rectangle10); 
+       map.addOverlay(rectangle11); 
+       map.addOverlay(rectangle12); 
+       map.addOverlay(rectangle13); 
+       map.addOverlay(rectangle14); 
+       map.addOverlay(rectangle15); 
+       map.addOverlay(rectangle16); 
+       map.addOverlay(rectangle17); 
+       map.addOverlay(rectangle18); 
+       map.addOverlay(rectangle19); 
+       map.addOverlay(rectangle20); 
+       map.addOverlay(rectangle21); 
+       map.addOverlay(rectangle22); 
+       map.addOverlay(rectangle23); 
+       map.addOverlay(rectangle24); 
+       map.addOverlay(rectangle25); 
+       map.addOverlay(rectangle26); 
+       map.addOverlay(rectangle27); 
+       map.addOverlay(rectangle28); 
+       map.addOverlay(rectangle29); 
+       map.addOverlay(rectangle30); 
+       map.addOverlay(rectangle31); 
+       map.addOverlay(rectangle32); 
+       map.addOverlay(rectangle33); 
+       map.addOverlay(rectangle34); 
+       map.addOverlay(rectangle35); 
+       map.addOverlay(rectangle36); 
+       map.addOverlay(rectangle37); 
+       map.addOverlay(rectangle38); 
+       map.addOverlay(rectangle39); 
+       map.addOverlay(rectangle40); 
+       map.addOverlay(rectangle41); 
+       map.addOverlay(rectangle42); 
+       map.addOverlay(rectangle43); 
+       map.addOverlay(rectangle44); 
+       map.addOverlay(rectangle45); 
+       map.addOverlay(rectangle46); 
+       map.addOverlay(rectangle47); 
+       map.addOverlay(rectangle48); 
+       map.addOverlay(rectangle49); 
+       map.addOverlay(rectangle50); 
+       map.addOverlay(rectangle51); 
+       map.addOverlay(rectangle52); 
+       map.addOverlay(rectangle53); 
+       map.addOverlay(rectangle54); 
+       map.addOverlay(rectangle55); 
+       map.addOverlay(rectangle56); 
+       map.addOverlay(rectangle57); 
+       map.addOverlay(rectangle58); 
+       map.addOverlay(rectangle59); 
+       map.addOverlay(rectangle60); 
+       map.addOverlay(rectangle61); 
+       map.addOverlay(rectangle62); 
+       map.addOverlay(rectangle63); 
+       map.addOverlay(rectangle64); 
+       map.addOverlay(rectangle65); 
+       map.addOverlay(rectangle66); 
+       map.addOverlay(rectangle67); 
+       map.addOverlay(rectangle68); 
+       map.addOverlay(rectangle69); 
+       map.addOverlay(rectangle70); 
+       map.addOverlay(rectangle71); 
+       map.addOverlay(rectangle72); 
+       map.addOverlay(rectangle73); 
+       map.addOverlay(rectangle74); 
+       map.addOverlay(rectangle75); 
+       map.addOverlay(rectangle76); 
+       map.addOverlay(rectangle77); 
+       map.addOverlay(rectangle78); 
+       map.addOverlay(rectangle79); 
+       map.addOverlay(rectangle80); 
+       map.addOverlay(rectangle81); 
+       map.addOverlay(rectangle82); 
+       map.addOverlay(rectangle83); 
+       map.addOverlay(rectangle84); 
+       map.addOverlay(rectangle85); 
+       map.addOverlay(rectangle86); 
+       map.addOverlay(rectangle87); 
+       map.addOverlay(rectangle88); 
+       map.addOverlay(rectangle89); 
+       
+	}
+	//清除覆盖物
+	function remove_overlay(){
+		map.clearOverlays();         
+	}
+</script>
+
