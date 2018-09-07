@@ -1,0 +1,44 @@
+Line 1************************
+       SEPARATOR:   #
+       KEYWORD:     include
+       OPERATOR:    <
+       IDENTIFIER:  iostream
+       OPERATOR:    >
+Line 2************************
+       KEYWORD:     using
+       KEYWORD:     namespace
+       IDENTIFIER:  std
+       SEPARATOR:   ;
+Line 3************************
+       KEYWORD:     int
+       IDENTIFIER:  main
+       SEPARATOR:   (
+       SEPARATOR:   )
+Line 4************************
+       SEPARATOR:   {
+Line 5************************
+       KEYWORD:     int
+       IDENTIFIER:  a
+       SEPARATOR:   ,
+       IDENTIFIER:  b
+       SEPARATOR:   ;
+       NOTE:        //define a and b
+Line 6************************
+       KEYWORD:     char
+       IDENTIFIER:  c
+       OPERATOR:    
+       CONSTANT:    A'
+       SEPARATOR:   ;
+Line 7************************
+       IDENTIFIER:  a
+       OPERATOR:    
+       NUMBER:      100.5
+       SEPARATOR:   ;
+Line 8************************
+Line 9************************
+       KEYWORD:     return
+       NUMBER:      0
+       SEPARATOR:   ;
+Line 10************************
+       SEPARATOR:   }
+

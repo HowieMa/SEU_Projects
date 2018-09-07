@@ -1,0 +1,19 @@
+float a;
+int main()
+{
+    int b;
+    int c;
+
+    b = 1;
+    c = 2;
+    a = 100.5;
+    if(b==c)
+	a = 100.0;
+    else
+        a = 200.0;
+
+    while(c>0)
+        c=c-1;
+
+    return 0;
+}
